@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Free ROI, Website Value, and Brand Impact calculators from Biz Boost Agency."/>
+<title>ROI Calculator — Biz Boost Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+.calc-section{padding:80px 52px}
+.calc-wrap{max-width:940px;margin:0 auto}
+.calc-tabs{display:flex;border:1px solid var(--border);border-radius:6px 6px 0 0;overflow:hidden}
+.calc-tab{flex:1;padding:16px 16px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:none;background:var(--card);color:var(--muted);cursor:none;transition:all .25s;border-right:1px solid var(--border)}
+.calc-tab:last-child{border-right:none}
+.calc-tab.active{background:var(--bg);color:var(--neon);border-bottom:2px solid var(--neon)}
+.calc-tab:hover:not(.active){color:var(--mid)}
+.calc-panel{display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 6px 6px;padding:48px}
+.calc-panel.active{display:block}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:32px}
+.cf label{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+.cf input,.cf select{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:13px 16px;font-family:'Barlow',sans-serif;font-size:15px;border-radius:4px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none}
+.cf input:focus,.cf select:focus{border-color:var(--neon);box-shadow:0 0 0 3px rgba(0,245,212,.07)}
+.calc-res{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:8px}
+.res-cell{background:var(--bg);padding:30px 20px;text-align:center;position:relative}
+.res-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--cc,var(--neon))}
+.res-val{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--cc,var(--neon));display:block;line-height:1;transition:transform .15s}
+.res-lbl{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:8px;display:block}
+.calc-note{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:16px;letter-spacing:.06em}
+.calc-note a{color:var(--neon);text-decoration:none}
+.calc-explainer{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:48px;max-width:940px;margin:48px auto 0}
+.explainer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:32px}
+.exp-item{padding:24px;background:var(--bg);border:1px solid var(--border);border-radius:6px;border-top:2px solid var(--neon)}
+.exp-item h4{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--neon);margin-bottom:10px}
+.exp-item p{font-size:13.5px;color:var(--mid);line-height:1.75}
+@media(max-width:900px){.calc-grid{grid-template-columns:1fr}.calc-panel{padding:28px 20px}.calc-res{grid-template-columns:1fr 1fr}.res-cell:last-child{grid-column:1/-1}.calc-section{padding:60px 24px}.calc-explainer{padding:32px 20px;margin:32px 24px 0}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div><div class="toast" id="toast"></div>
+<div class="mob-menu" id="mobMenu"><button class="mob-close" id="mobClose">[ CLOSE ]</button><a href="index.html" onclick="closeMob()">Home</a><a href="services.html" onclick="closeMob()">Services</a><a href="pricing.html" onclick="closeMob()">Pricing</a><a href="calculator.html" onclick="closeMob()">Calculator</a><a href="process.html" onclick="closeMob()">Process</a><a href="testimonials.html" onclick="closeMob()">Clients</a><a href="contact.html" onclick="closeMob()" style="color:var(--neon)">Get Started</a></div>
+<nav id="mainNav"><a href="index.html" class="nav-logo">Biz Boost Agency<span>Web · Brand · Growth</span></a><div class="nav-links"><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="calculator.html">Calculator</a><a href="process.html">Process</a><a href="testimonials.html">Clients</a></div><div class="nav-right"><button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☀️</button><a href="contact.html" class="nav-cta">Get Started</a><button class="hamburger" id="hamburger"><span></span><span></span><span></span></button></div></nav>
+
+<div class="page-hero"><div class="hero-scan"></div><div class="sec-label center">Free Tools</div><h1>Know Your<br><span style="color:var(--neon)">Numbers First.</span></h1><p>Real calculators. Real estimates. See the potential impact before you commit a single dollar.</p></div>
+
+<div class="calc-section">
+  <div class="calc-wrap">
+    <div class="calc-tabs">
+      <button class="calc-tab active" onclick="switchTab('roi')">📊 Business ROI</button>
+      <button class="calc-tab" onclick="switchTab('web')">🖥️ Website Value</button>
+      <button class="calc-tab" onclick="switchTab('brand')">🎨 Brand Impact</button>
+    </div>
+    <div class="calc-panel active" id="tab-roi">
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;margin-bottom:6px;color:var(--neon)">Business ROI Calculator</h3>
+      <p style="color:var(--mid);font-size:14px;margin-bottom:28px">Estimate how much more revenue a Biz Boost engagement could generate for your business.</p>
+      <div class="calc-grid">
+        <div class="cf"><label>Monthly Revenue ($)</label><input type="number" id="roi-rev" value="50000" oninput="calcROI()"/></div>
+        <div class="cf"><label>Industry</label><select id="roi-industry" onchange="calcROI()"><option value="0.15">Service Business</option><option value="0.22">E-Commerce</option><option value="0.18">Healthcare</option><option value="0.20">Consulting</option><option value="0.12">Retail</option></select></div>
+        <div class="cf"><label>Months Since Last Rebrand</label><input type="number" id="roi-months" value="24" oninput="calcROI()"/></div>
+        <div class="cf"><label>Current Ad Spend / mo ($)</label><input type="number" id="roi-ads" value="2000" oninput="calcROI()"/></div>
+      </div>
+      <div class="calc-res">
+        <div class="res-cell" style="--cc:var(--neon)"><span class="res-val" id="roi-gain">+$13k</span><span class="res-lbl">Potential Monthly Gain</span></div>
+        <div class="res-cell" style="--cc:var(--neon2)"><span class="res-val" id="roi-payback">1mo</span><span class="res-lbl">Est. Payback Period</span></div>
+        <div class="res-cell" style="--cc:var(--neon3)"><span class="res-val" id="roi-score">A</span><span class="res-lbl">Growth Score</span></div>
+      </div>
+      <p class="calc-note">Based on industry benchmarks. Actual results vary. <a href="contact.html">Get your full audit →</a></p>
+    </div>
+    <div class="calc-panel" id="tab-web">
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;margin-bottom:6px;color:var(--neon)">Website Value Calculator</h3>
+      <p style="color:var(--mid);font-size:14px;margin-bottom:28px">See how much more revenue a new website could generate based on your current traffic and pricing.</p>
+      <div class="calc-grid">
+        <div class="cf"><label>Monthly Website Visitors</label><input type="number" id="w-visitors" value="1000" oninput="calcWeb()"/></div>
+        <div class="cf"><label>Current Conversion Rate (%)</label><input type="number" id="w-conv" value="1.5" step="0.1" oninput="calcWeb()"/></div>
+        <div class="cf"><label>Avg Sale / Lead Value ($)</label><input type="number" id="w-val" value="500" oninput="calcWeb()"/></div>
+        <div class="cf"><label>Website Age (years)</label><input type="number" id="w-age" value="3" oninput="calcWeb()"/></div>
+      </div>
+      <div class="calc-res">
+        <div class="res-cell" style="--cc:var(--mid)"><span class="res-val" id="w-current">$7,500</span><span class="res-lbl">Current Monthly Value</span></div>
+        <div class="res-cell" style="--cc:var(--neon)"><span class="res-val" id="w-new">$13,500</span><span class="res-lbl">Potential w/ New Site</span></div>
+        <div class="res-cell" style="--cc:var(--neon3)"><span class="res-val" id="w-uplift">+80%</span><span class="res-lbl">Avg Conversion Uplift</span></div>
+      </div>
+      <p class="calc-note">New websites typically increase conversions 50–120%. <a href="contact.html">Get a quote →</a></p>
+    </div>
+    <div class="calc-panel" id="tab-brand">
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;margin-bottom:6px;color:var(--neon)">Brand Impact Calculator</h3>
+      <p style="color:var(--mid);font-size:14px;margin-bottom:28px">Find out how much revenue a stronger brand identity could unlock for your business.</p>
+      <div class="calc-grid">
+        <div class="cf"><label>Monthly Leads / Inquiries</label><input type="number" id="b-leads" value="50" oninput="calcBrand()"/></div>
+        <div class="cf"><label>Current Close Rate (%)</label><input type="number" id="b-close" value="20" oninput="calcBrand()"/></div>
+        <div class="cf"><label>Avg Contract / Sale Value ($)</label><input type="number" id="b-sale" value="1500" oninput="calcBrand()"/></div>
+        <div class="cf"><label>Brand Professionalism (1–5)</label><select id="b-prof" onchange="calcBrand()"><option value="1">1 — DIY / No brand</option><option value="2">2 — Basic logo only</option><option value="3" selected>3 — Decent, not polished</option><option value="4">4 — Pretty good</option><option value="5">5 — Professional &amp; cohesive</option></select></div>
+      </div>
+      <div class="calc-res">
+        <div class="res-cell" style="--cc:var(--mid)"><span class="res-val" id="b-current">$15,000</span><span class="res-lbl">Current Monthly Rev</span></div>
+        <div class="res-cell" style="--cc:var(--neon2)"><span class="res-val" id="b-boost">$21,000</span><span class="res-lbl">With Strong Brand</span></div>
+        <div class="res-cell" style="--cc:var(--neon3)"><span class="res-val" id="b-delta">+$6k</span><span class="res-lbl">Monthly Upside</span></div>
+      </div>
+      <p class="calc-note">Strong branding increases close rates by 20–45% on average. <a href="contact.html">Book a brand audit →</a></p>
+    </div>
+  </div>
+
+  <div class="calc-explainer">
+    <div class="sec-label">How We Calculate</div>
+    <h2 class="sec-title" style="font-size:clamp(32px,4vw,52px)">These aren't just<br>random numbers.</h2>
+    <div class="explainer-grid">
+      <div class="exp-item"><h4>Industry Data</h4><p>Our benchmarks are sourced from real conversion and ROI data across 150+ client engagements and industry research.</p></div>
+      <div class="exp-item" style="border-top-color:var(--neon2)"><h4 style="color:var(--neon2)">Conservative Estimates</h4><p>We deliberately use conservative multipliers. Real results often exceed these projections — we'd rather under-promise.</p></div>
+      <div class="exp-item" style="border-top-color:var(--neon3)"><h4 style="color:var(--neon3)">Your Inputs Matter</h4><p>The accuracy of results depends on the inputs you provide. The more accurate your numbers, the more useful the output.</p></div>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--card);border-top:1px solid var(--border);padding:80px 52px;text-align:center">
+  <div class="sec-label center" style="margin-bottom:20px">Want the Full Picture?</div>
+  <h2 class="sec-title" style="margin-bottom:20px">Get a real audit,<br><span style="color:var(--neon)">not a calculator.</span></h2>
+  <p style="color:var(--mid);font-size:16px;line-height:1.8;max-width:500px;margin:0 auto 40px">We'll dig into your actual numbers, your competitors, and your market — and hand you a personalized roadmap. Free, no pitch.</p>
+  <a href="contact.html" class="btn-primary">Book Your Free Audit</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo-mark">Biz Boost Agency<span>Web · Brand · Growth</span></div><p>Building brands that dominate. Est. 2025.</p><div class="footer-newsletter"><input type="email" placeholder="Your email address..."/><button class="newsletter-btn">Subscribe</button></div></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#web">Web Design</a></li><li><a href="services.html#brand">Brand Identity</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#seo">SEO &amp; Ads</a></li><li><a href="services.html#email">Email Marketing</a></li><li><a href="services.html#consult">Consulting</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="process.html">Our Process</a></li><li><a href="testimonials.html">Client Results</a></li><li><a href="calculator.html">ROI Calculator</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="calculator.html">Free ROI Calculator</a></li><li><a href="contact.html">Free Strategy Call</a></li><li><a href="pricing.html">Packages &amp; Pricing</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:michelle@mreneewilliams.com">michelle@mreneewilliams.com</a></li><li><a href="tel:+15551234567">(555) 123-4567</a></li><li><span>Mon–Fri, 9am–6pm EST</span></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 Biz Boost Agency · All rights reserved.</div><div class="footer-social"><a href="#" class="social-icon">📸</a><a href="#" class="social-icon">👥</a><a href="#" class="social-icon">💼</a><a href="#" class="social-icon">🐦</a></div><div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div>
+</footer>
+<script src="_shared.js"></script>
+<script>
+function switchTab(t){
+  document.querySelectorAll('.calc-tab').forEach((b,i)=>b.classList.toggle('active',['roi','web','brand'][i]===t));
+  document.querySelectorAll('.calc-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+}
+function fmtK(n){return n>9999?Math.round(n/1000)+'k':n.toLocaleString()}
+function animVal(id,v){const el=document.getElementById(id);if(!el)return;el.style.transform='scale(1.12)';el.textContent=v;setTimeout(()=>el.style.transform='scale(1)',160)}
+function calcROI(){
+  const rev=+document.getElementById('roi-rev').value||0,mult=+document.getElementById('roi-industry').value||0.15,months=+document.getElementById('roi-months').value||0,ads=+document.getElementById('roi-ads').value||0;
+  const gain=Math.round(rev*(mult+Math.min(months/24,1)*0.1));
+  const payback=Math.max(1,Math.round((ads*6)/Math.max(gain,1)));
+  const score=gain>rev*.2?'A+':gain>rev*.15?'A':gain>rev*.12?'B+':'B';
+  animVal('roi-gain','+$'+fmtK(gain));animVal('roi-payback',payback+'mo');animVal('roi-score',score);
+}
+function calcWeb(){
+  const visitors=+document.getElementById('w-visitors').value||0,conv=(+document.getElementById('w-conv').value||0)/100,val=+document.getElementById('w-val').value||0,age=+document.getElementById('w-age').value||0;
+  const current=Math.round(visitors*conv*val),uplift=Math.max(1.5,2.3-(age*.05));
+  animVal('w-current','$'+current.toLocaleString());animVal('w-new','$'+Math.round(current*uplift).toLocaleString());animVal('w-uplift','+'+Math.round((uplift-1)*100)+'%');
+}
+function calcBrand(){
+  const leads=+document.getElementById('b-leads').value||0,close=(+document.getElementById('b-close').value||0)/100,sale=+document.getElementById('b-sale').value||0,prof=+document.getElementById('b-prof').value||3;
+  const current=Math.round(leads*close*sale),boosted=Math.round(current*(1+((5-prof)*.08)));
+  animVal('b-current','$'+current.toLocaleString());animVal('b-boost','$'+boosted.toLocaleString());animVal('b-delta','+$'+fmtK(boosted-current));
+}
+calcROI();calcWeb();calcBrand();
+</script>
+</body></html>

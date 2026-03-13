@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Real results from real clients. See what businesses say about working with Biz Boost Agency."/>
+<title>Client Results — Biz Boost Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;max-width:1200px;margin:64px auto 0}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:40px;transition:all .3s;position:relative;overflow:hidden}
+.testi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--neon),var(--neon2));opacity:0;transition:opacity .3s}
+.testi-card:hover{border-color:rgba(0,245,212,.25);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.testi-card:hover::before{opacity:1}
+.stars{display:flex;gap:3px;margin-bottom:18px}.star{color:var(--neon3);font-size:16px}
+.testi-quote{font-size:15px;line-height:1.85;color:var(--mid);margin-bottom:24px;font-style:italic}
+.testi-quote::before{content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--neon);opacity:.25;display:block;line-height:.7;margin-bottom:12px}
+.testi-author{display:flex;align-items:center;gap:14px;border-top:1px solid var(--border);padding-top:20px}
+.testi-avatar{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;color:#060810;flex-shrink:0}
+.testi-name{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.05em;display:block}
+.testi-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;display:block;margin-top:3px}
+.testi-result{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;background:rgba(0,245,212,.08);border:1px solid rgba(0,245,212,.2);color:var(--neon);padding:4px 10px;border-radius:2px;text-transform:uppercase;margin-top:12px}
+.featured-card{background:linear-gradient(135deg,rgba(0,245,212,.06) 0%,rgba(255,60,172,.04) 100%);border-color:rgba(0,245,212,.2)}
+.results-bar{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 52px;margin-top:0}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:1000px;margin:48px auto 0}
+.result-item{background:var(--bg);padding:40px 28px;text-align:center;transition:background .25s}
+.result-item:hover{background:var(--card2)}
+.result-val{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;display:block}
+.result-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:10px;display:block}
+.cta-band{padding:110px 52px;text-align:center;background:linear-gradient(180deg,var(--bg) 0%,rgba(0,245,212,.04) 50%,var(--bg) 100%)}
+.cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,96px);line-height:1;margin-bottom:24px}
+@media(max-width:900px){.results-grid{grid-template-columns:1fr 1fr}.results-bar{padding:56px 24px}.cta-band{padding:72px 24px}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div><div class="toast" id="toast"></div>
+<div class="mob-menu" id="mobMenu"><button class="mob-close" id="mobClose">[ CLOSE ]</button><a href="index.html" onclick="closeMob()">Home</a><a href="services.html" onclick="closeMob()">Services</a><a href="pricing.html" onclick="closeMob()">Pricing</a><a href="calculator.html" onclick="closeMob()">Calculator</a><a href="process.html" onclick="closeMob()">Process</a><a href="testimonials.html" onclick="closeMob()">Clients</a><a href="contact.html" onclick="closeMob()" style="color:var(--neon)">Get Started</a></div>
+<nav id="mainNav"><a href="index.html" class="nav-logo">Biz Boost Agency<span>Web · Brand · Growth</span></a><div class="nav-links"><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="calculator.html">Calculator</a><a href="process.html">Process</a><a href="testimonials.html">Clients</a></div><div class="nav-right"><button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button><a href="contact.html" class="nav-cta">Get Started</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+
+<div class="page-hero">
+  <div class="hero-scan"></div>
+  <div class="sec-label center">Social Proof</div>
+  <h1>Real clients.<br><span style="color:var(--neon)">Real results.</span></h1>
+  <p>We let the numbers do the talking. Here's what businesses say after working with us.</p>
+</div>
+
+<div class="results-bar">
+  <div style="text-align:center;max-width:640px;margin:0 auto"><div class="sec-label center">By The Numbers</div><h2 class="sec-title">The proof is<br>in the data.</h2></div>
+  <div class="results-grid">
+    <div class="result-item reveal"><span class="result-val" style="color:var(--neon)">312%</span><span class="result-lbl">Avg Client ROI</span></div>
+    <div class="result-item reveal"><span class="result-val" style="color:var(--neon2)">2.4×</span><span class="result-lbl">Avg Conv. Lift</span></div>
+    <div class="result-item reveal"><span class="result-val" style="color:var(--neon3)">98%</span><span class="result-lbl">Retention Rate</span></div>
+    <div class="result-item reveal"><span class="result-val" style="color:var(--neon)">150+</span><span class="result-lbl">Brands Launched</span></div>
+  </div>
+</div>
+
+<section style="background:var(--bg)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="sec-label" style="margin-bottom:12px">Testimonials</div>
+    <h2 class="sec-title" style="margin-bottom:0">What they're<br>saying.</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card featured-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">Biz Boost transformed our online presence completely. Within 3 months of our new website launching, organic traffic was up 300% and qualified leads quadrupled. They didn't just build us a website — they built us a growth machine.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon),var(--neon2))">SM</div><div><span class="testi-name">Sarah Mitchell</span><span class="testi-role">CEO, TechStart Inc.</span><span class="testi-result">📈 300% traffic increase</span></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">The ROI from their digital marketing work has been absolutely incredible. We were skeptical at first — we'd worked with other agencies before and been burned. This was completely different. Transparent, strategic, and effective.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon2),var(--neon3))">MC</div><div><span class="testi-name">Michael Chen</span><span class="testi-role">Founder, GrowthLabs</span><span class="testi-result">💰 4× lead volume</span></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">Professional, fast, and incredibly talented. They made us look like a Fortune 500 company overnight. Our close rate went from 18% to 34% just from having a polished brand. Worth every single penny.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon3),var(--neon))">ER</div><div><span class="testi-name">Emily Rodriguez</span><span class="testi-role">Marketing Director, Elevate Co.</span><span class="testi-result">🎯 34% close rate</span></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">I came to Biz Boost with basically nothing — a basic Squarespace site and zero brand presence. They built us a full brand kit, new website, and email funnel in under two weeks. Revenue doubled in the first quarter.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,var(--neon2))">JL</div><div><span class="testi-name">Jordan Lee</span><span class="testi-role">Owner, Luxe Interiors</span><span class="testi-result">🚀 2× revenue Q1</span></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">The consulting session alone was worth the investment. They identified three major gaps in our funnel in 60 minutes that we'd missed for two years. Implemented the recommendations and saw a 40% revenue bump within 6 weeks.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon),#7c3aed)">AT</div><div><span class="testi-name">Amanda Torres</span><span class="testi-role">Director, PrimeCare Health</span><span class="testi-result">📊 40% revenue bump</span></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">We hired Biz Boost for SEO and within 90 days we were ranking #1 for our primary keywords. Our Google Ads cost-per-lead dropped by 52%. They know what they're doing and they know how to communicate it in plain English.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon2),#7c3aed)">RK</div><div><span class="testi-name">Ryan Kowalski</span><span class="testi-role">CEO, Summit Financial</span><span class="testi-result">🔍 #1 keyword ranking</span></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">Social media was a nightmare for us — we had no strategy, inconsistent posting, and zero engagement. After 60 days with Biz Boost managing our accounts, engagement is up 580% and we're getting DMs from potential clients daily.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon3),var(--neon2))">KJ</div><div><span class="testi-name">Keisha Johnson</span><span class="testi-role">Founder, Fresh Eats Co.</span><span class="testi-result">📱 580% engagement lift</span></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">Their email sequences are works of art. We went from a 12% open rate to 41% and our abandoned cart recovery emails alone are bringing in an extra $8K a month. The automation runs itself now.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon),var(--neon3))">DW</div><div><span class="testi-name">Derek Walsh</span><span class="testi-role">E-Commerce Dir., StyleVault</span><span class="testi-result">✉️ 41% email open rate</span></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="testi-quote">Fast, professional, and genuinely invested in our success. They delivered our full brand package in 9 days and it was better than anything I imagined. The whole team references the brand guide constantly — it's that good.</div>
+      <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,var(--neon3))">LP</div><div><span class="testi-name">Laura Park</span><span class="testi-role">Co-Founder, Bloom Studio</span><span class="testi-result">⚡ 9-day turnaround</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="sec-label center" style="margin-bottom:20px">Join Them</div>
+  <h2>Ready to be our<br><span style="color:var(--neon)">next success story?</span></h2>
+  <p style="color:var(--mid);max-width:480px;margin:0 auto 44px;font-size:17px;line-height:1.8">Let's build something that gets results worth talking about.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="contact.html" class="btn-primary">Get Started Today</a>
+    <a href="pricing.html" class="btn-ghost">View Pricing</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo-mark">Biz Boost Agency<span>Web · Brand · Growth</span></div><p>Building brands that dominate. Websites, branding, and digital marketing that actually moves the needle. Est. 2025.</p><div class="footer-newsletter"><input type="email" placeholder="Your email address..."/><button class="newsletter-btn">Subscribe</button></div></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#web">Web Design</a></li><li><a href="services.html#brand">Brand Identity</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#seo">SEO &amp; Ads</a></li><li><a href="services.html#email">Email Marketing</a></li><li><a href="services.html#consult">Consulting</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="process.html">Our Process</a></li><li><a href="testimonials.html">Client Results</a></li><li><a href="calculator.html">ROI Calculator</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="calculator.html">Free ROI Calculator</a></li><li><a href="contact.html">Free Strategy Call</a></li><li><a href="pricing.html">Packages &amp; Pricing</a></li><li><span>Blog — Coming Soon</span></li><li><span>Case Studies — Coming Soon</span></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:michelle@mreneewilliams.com">michelle@mreneewilliams.com</a></li><li><a href="tel:+15551234567">(555) 123-4567</a></li><li><span>Mon–Fri, 9am–6pm EST</span></li><li><a href="contact.html">Send a Message</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Biz Boost Agency · All rights reserved.</div>
+    <div class="footer-social"><a href="#" class="social-icon">📸</a><a href="#" class="social-icon">👥</a><a href="#" class="social-icon">💼</a><a href="#" class="social-icon">🐦</a></div>
+    <div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="_shared.js"></script>
+</body></html>

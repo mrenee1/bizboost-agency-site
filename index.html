@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Biz Boost Agency — Websites, branding, and digital marketing that actually move the needle."/>
+<title>Biz Boost Agency — Web · Brand · Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:140px 52px 80px;position:relative;overflow:hidden;text-align:center}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--neon);text-transform:uppercase;margin-bottom:32px;opacity:0;animation:fadeUp .9s ease .2s forwards;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:30px;height:1px;background:var(--neon);opacity:.5}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,13vw,168px);line-height:.88;letter-spacing:.015em;margin-bottom:36px;opacity:0;animation:fadeUp .9s ease .4s forwards}
+.line1{display:block;color:var(--text)}.line2{display:block;color:transparent;-webkit-text-stroke:1px var(--neon);filter:drop-shadow(0 0 36px rgba(0,245,212,.3))}.line3{display:block;color:var(--neon2);text-shadow:0 0 60px rgba(255,60,172,.5)}
+.hero-sub{max-width:600px;font-size:17px;font-weight:300;line-height:1.8;color:var(--mid);margin-bottom:52px;opacity:0;animation:fadeUp .9s ease .6s forwards}
+.hero-sub strong{color:var(--text);font-weight:600}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp .9s ease .8s forwards}
+.hero-stats{display:flex;gap:52px;flex-wrap:wrap;justify-content:center;margin-top:56px;padding-top:40px;border-top:1px solid var(--border);opacity:0;animation:fadeUp .9s ease 1s forwards}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--neon);display:block;line-height:1}.stat-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:6px;display:block}
+.scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);animation:fadeUp .9s ease 1.4s both}
+.scroll-mouse{width:24px;height:38px;border:1.5px solid rgba(128,140,200,.3);border-radius:12px;display:flex;align-items:flex-start;justify-content:center;padding:6px;margin:0 auto}
+.scroll-dot{width:4px;height:4px;background:var(--neon);border-radius:50%;animation:scrollDot 1.6s ease infinite}
+@keyframes scrollDot{0%,100%{transform:translateY(0);opacity:1}75%{transform:translateY(14px);opacity:.2}}
+.scroll-hint{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-top:8px}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:float 9s ease-in-out infinite}
+.orb1{width:500px;height:500px;background:rgba(0,245,212,.07);top:-150px;right:-150px}
+.orb2{width:350px;height:350px;background:rgba(255,60,172,.07);bottom:-80px;left:-80px;animation-delay:3.5s}
+.orb3{width:250px;height:250px;background:rgba(245,197,24,.05);top:55%;left:15%;animation-delay:6s}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.04)}}
+.ticker{background:var(--neon);padding:11px 0;overflow:hidden;position:relative;z-index:1}
+.ticker-inner{display:flex;animation:ticker 28s linear infinite;white-space:nowrap}
+.ticker-item{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.18em;color:#060810;padding:0 36px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:52px 0;overflow:hidden;background:var(--card)}
+.marquee-row{display:flex;animation:mq 38s linear infinite;white-space:nowrap;margin-bottom:14px}
+.marquee-row.rev{animation-direction:reverse}
+.marquee-item{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:.06em;color:transparent;-webkit-text-stroke:1px var(--border);padding:0 44px;transition:all .3s;cursor:none}
+.marquee-item:hover{color:var(--neon);-webkit-text-stroke:0}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* Services preview */
+.services-preview{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--border);max-width:1200px;margin:0 auto;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.svc-card{background:var(--bg);border-top:2px solid var(--nc,var(--neon));padding:36px 32px 48px;cursor:none;transition:all .35s;position:relative;overflow:hidden}
+.svc-card:hover{background:var(--card2);transform:translateY(-4px);box-shadow:0 20px 60px var(--ng,rgba(0,245,212,.12))}
+.s-web{--nc:var(--neon);--ng:rgba(0,245,212,.15)}.s-brand{--nc:var(--neon2);--ng:rgba(255,60,172,.15)}.s-social{--nc:var(--neon3);--ng:rgba(245,197,24,.15)}.s-consult{--nc:#f5c518;--ng:rgba(245,197,24,.15)}.s-seo{--nc:var(--neon);--ng:rgba(0,245,212,.15)}.s-email{--nc:var(--neon2);--ng:rgba(255,60,172,.15)}
+.svc-icon{font-size:32px;margin-bottom:12px;display:block}.svc-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.06em;color:var(--nc);margin-bottom:10px}.svc-desc{font-size:13.5px;line-height:1.8;color:var(--mid)}
+.svc-link{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--nc);text-decoration:none;text-transform:uppercase;margin-top:18px;opacity:.6;transition:opacity .2s}
+.svc-card:hover .svc-link{opacity:1}
+/* Nums */
+.nums-bg{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 52px}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:900px;margin:52px auto 0}
+.num-item{background:var(--card);padding:40px 32px;text-align:center;position:relative;transition:background .25s}
+.num-item:hover{background:var(--card2)}
+.num-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--nc2,var(--neon)),transparent)}
+.num-val{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;color:var(--nc2,var(--neon))}.num-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:10px;display:block}
+/* Testimonials preview */
+.testi-preview{background:var(--card);border-top:1px solid var(--border)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px;margin:64px auto 0}
+.testi-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:36px;transition:all .3s;position:relative;overflow:hidden}
+.testi-card:hover{border-color:rgba(0,245,212,.25);transform:translateY(-4px)}
+.stars{display:flex;gap:3px;margin-bottom:16px}.star{color:var(--neon3);font-size:14px}
+.testi-quote{font-size:14.5px;line-height:1.8;color:var(--mid);margin-bottom:22px;font-style:italic}
+.testi-quote::before{content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--neon);opacity:.3;display:block;line-height:.8;margin-bottom:8px}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--neon2));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:15px;color:#060810;flex-shrink:0}
+.testi-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.05em;display:block}.testi-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;display:block;margin-top:2px}
+/* CTA band */
+.cta-band{padding:110px 52px;text-align:center;background:linear-gradient(180deg,var(--bg) 0%,rgba(0,245,212,.04) 50%,var(--bg) 100%);position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,245,212,.06) 0%,transparent 70%)}
+.cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,104px);line-height:1;margin-bottom:24px;position:relative}
+.cta-band p{font-size:17px;color:var(--mid);max-width:500px;margin:0 auto 44px;line-height:1.8;position:relative}
+@media(max-width:900px){.nums-grid{grid-template-columns:1fr 1fr}.hero{padding:110px 24px 60px}.hero-stats{gap:28px}.nums-bg{padding:64px 24px}.marquee-item{font-size:36px}.cta-band{padding:72px 24px}}
+@media(max-width:540px){.hero-title{font-size:clamp(64px,18vw,120px)}.nums-grid{grid-template-columns:1fr 1fr}.stat-num{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div><div class="toast" id="toast"></div>
+<div class="mob-menu" id="mobMenu"><button class="mob-close" id="mobClose">[ CLOSE ]</button><a href="index.html" onclick="closeMob()">Home</a><a href="services.html" onclick="closeMob()">Services</a><a href="pricing.html" onclick="closeMob()">Pricing</a><a href="calculator.html" onclick="closeMob()">Calculator</a><a href="process.html" onclick="closeMob()">Process</a><a href="testimonials.html" onclick="closeMob()">Clients</a><a href="contact.html" onclick="closeMob()" style="color:var(--neon)">Get Started</a></div>
+<nav id="mainNav"><a href="index.html" class="nav-logo">Biz Boost Agency<span>Web · Brand · Growth</span></a><div class="nav-links"><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="calculator.html">Calculator</a><a href="process.html">Process</a><a href="testimonials.html">Clients</a></div><div class="nav-right"><button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button><a href="contact.html" class="nav-cta">Get Started</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+
+<section class="hero">
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div class="hero-scan"></div>
+  <div class="hero-eyebrow">Biz Boost Agency · Est. 2025</div>
+  <h1 class="hero-title"><span class="line1">Build.</span><span class="line2">Brand.</span><span class="line3">Dominate.</span></h1>
+  <p class="hero-sub">Websites, branding, and digital marketing that actually move the needle. <strong>We don't do average.</strong> Every pixel, every word, every campaign is built to convert.</p>
+  <div class="hero-btns"><a href="services.html" class="btn-primary">See Our Services</a><a href="calculator.html" class="btn-ghost">ROI Calculator</a></div>
+  <div class="hero-stats">
+    <div style="text-align:center"><span class="stat-num">150+</span><span class="stat-lbl">Clients Served</span></div>
+    <div style="text-align:center"><span class="stat-num">98%</span><span class="stat-lbl">Retention Rate</span></div>
+    <div style="text-align:center"><span class="stat-num">7–14</span><span class="stat-lbl">Day Delivery</span></div>
+    <div style="text-align:center"><span class="stat-num" style="color:var(--neon2)">$0</span><span class="stat-lbl">Fluff Included</span></div>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-mouse"><div class="scroll-dot"></div></div><p class="scroll-hint">Scroll to explore</p></div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-inner"><span class="ticker-item">WEB DESIGN <span style="opacity:.4">✦</span></span><span class="ticker-item">BRAND IDENTITY <span style="opacity:.4">✦</span></span><span class="ticker-item">SOCIAL MEDIA <span style="opacity:.4">✦</span></span><span class="ticker-item">SEO &amp; ADS <span style="opacity:.4">✦</span></span><span class="ticker-item">EMAIL MARKETING <span style="opacity:.4">✦</span></span><span class="ticker-item">CONSULTING <span style="opacity:.4">✦</span></span><span class="ticker-item">LOGO DESIGN <span style="opacity:.4">✦</span></span><span class="ticker-item">LANDING PAGES <span style="opacity:.4">✦</span></span><span class="ticker-item">WEB DESIGN <span style="opacity:.4">✦</span></span><span class="ticker-item">BRAND IDENTITY <span style="opacity:.4">✦</span></span><span class="ticker-item">SOCIAL MEDIA <span style="opacity:.4">✦</span></span><span class="ticker-item">SEO &amp; ADS <span style="opacity:.4">✦</span></span><span class="ticker-item">EMAIL MARKETING <span style="opacity:.4">✦</span></span><span class="ticker-item">CONSULTING <span style="opacity:.4">✦</span></span><span class="ticker-item">LOGO DESIGN <span style="opacity:.4">✦</span></span><span class="ticker-item">LANDING PAGES <span style="opacity:.4">✦</span></span></div></div>
+
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-row"><span class="marquee-item">WEBSITES</span><span class="marquee-item">LOGOS</span><span class="marquee-item">CAMPAIGNS</span><span class="marquee-item">BRANDS</span><span class="marquee-item">FUNNELS</span><span class="marquee-item">CONTENT</span><span class="marquee-item">WEBSITES</span><span class="marquee-item">LOGOS</span><span class="marquee-item">CAMPAIGNS</span><span class="marquee-item">BRANDS</span><span class="marquee-item">FUNNELS</span><span class="marquee-item">CONTENT</span></div>
+  <div class="marquee-row rev"><span class="marquee-item">GROWTH</span><span class="marquee-item">CONVERSION</span><span class="marquee-item">IDENTITY</span><span class="marquee-item">STRATEGY</span><span class="marquee-item">REACH</span><span class="marquee-item">RESULTS</span><span class="marquee-item">GROWTH</span><span class="marquee-item">CONVERSION</span><span class="marquee-item">IDENTITY</span><span class="marquee-item">STRATEGY</span><span class="marquee-item">REACH</span><span class="marquee-item">RESULTS</span></div>
+</div>
+
+<section class="services-preview">
+  <div style="text-align:center;max-width:600px;margin:0 auto 64px">
+    <div class="sec-label center">What We Do</div>
+    <h2 class="sec-title">Everything your<br>brand needs.</h2>
+    <p style="color:var(--mid);line-height:1.8;font-size:15.5px;margin-top:18px">From first impression to full-scale growth engine.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card s-web reveal"><div class="svc-icon">🖥️</div><div class="svc-title">Web Design</div><div class="svc-desc">Custom websites built to convert. Fast, mobile-first, designed to make your competition nervous.</div><a href="services.html#web" class="svc-link">Learn More →</a></div>
+    <div class="svc-card s-brand reveal"><div class="svc-icon">🎨</div><div class="svc-title">Brand Identity</div><div class="svc-desc">Logos, color systems, and brand guidelines that make you instantly recognizable and undeniably credible.</div><a href="services.html#brand" class="svc-link">Learn More →</a></div>
+    <div class="svc-card s-social reveal"><div class="svc-icon">📱</div><div class="svc-title">Social Media</div><div class="svc-desc">Content strategy and scheduling that builds community and keeps your brand in the feed — every day.</div><a href="services.html#social" class="svc-link">Learn More →</a></div>
+    <div class="svc-card s-consult reveal"><div class="svc-icon">💡</div><div class="svc-title">Consulting</div><div class="svc-desc">We diagnose your business, identify the leaks, and hand you a concrete roadmap to plug them.</div><a href="services.html#consult" class="svc-link">Learn More →</a></div>
+    <div class="svc-card s-seo reveal"><div class="svc-icon">📈</div><div class="svc-title">SEO &amp; Ads</div><div class="svc-desc">Organic rankings and paid campaigns that bring buyers to your door — not browsers. ROI-focused.</div><a href="services.html#seo" class="svc-link">Learn More →</a></div>
+    <div class="svc-card s-email reveal"><div class="svc-icon">✉️</div><div class="svc-title">Email Marketing</div><div class="svc-desc">Automated sequences and newsletters that turn one-time buyers into loyal, repeat customers.</div><a href="services.html#email" class="svc-link">Learn More →</a></div>
+  </div>
+  <div style="text-align:center;margin-top:48px"><a href="services.html" class="btn-outline">View All Services</a></div>
+</section>
+
+<div class="nums-bg">
+  <div style="text-align:center;max-width:640px;margin:0 auto"><div class="sec-label center">By The Numbers</div><h2 class="sec-title">Results that<br>speak louder.</h2></div>
+  <div class="nums-grid">
+    <div class="num-item reveal" style="--nc2:var(--neon)"><div class="num-val">312%</div><span class="num-lbl">Avg ROI for Clients</span></div>
+    <div class="num-item reveal" style="--nc2:var(--neon2)"><div class="num-val">2.4×</div><span class="num-lbl">Avg Conv. Rate Lift</span></div>
+    <div class="num-item reveal" style="--nc2:var(--neon3)"><div class="num-val">11d</div><span class="num-lbl">Avg Delivery Time</span></div>
+    <div class="num-item reveal" style="--nc2:var(--neon)"><div class="num-val">150+</div><span class="num-lbl">Brands Launched</span></div>
+  </div>
+</div>
+
+<section class="testi-preview">
+  <div style="text-align:center;max-width:640px;margin:0 auto"><div class="sec-label center">Client Results</div><h2 class="sec-title">What our clients<br>actually say.</h2></div>
+  <div class="testi-grid">
+    <div class="testi-card reveal"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div class="testi-quote">Biz Boost transformed our online presence completely. Traffic up 300% in 3 months and leads are up 4x.</div><div class="testi-author"><div class="testi-avatar">SM</div><div><span class="testi-name">Sarah Mitchell</span><span class="testi-role">CEO, TechStart Inc.</span></div></div></div>
+    <div class="testi-card reveal"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div class="testi-quote">The ROI from their digital marketing has been incredible. Best investment we've ever made.</div><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon2),var(--neon3))">MC</div><div><span class="testi-name">Michael Chen</span><span class="testi-role">Founder, GrowthLabs</span></div></div></div>
+    <div class="testi-card reveal"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div class="testi-quote">Professional, fast, and incredibly talented. They made us look like a Fortune 500 overnight.</div><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,var(--neon3),var(--neon))">ER</div><div><span class="testi-name">Emily Rodriguez</span><span class="testi-role">Marketing Dir., Elevate Co</span></div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:48px"><a href="testimonials.html" class="btn-outline">Read All Reviews</a></div>
+</section>
+
+<div class="cta-band">
+  <div class="sec-label center" style="margin-bottom:20px">Ready to Boost?</div>
+  <h2>Your business<br><span style="color:var(--neon)">deserves more.</span></h2>
+  <p>No templates. No fluff. A partner who builds like it's their own business on the line.</p>
+  <a href="contact.html" class="btn-primary">Start the Conversation</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo-mark">Biz Boost Agency<span>Web · Brand · Growth</span></div><p>Building brands that dominate. Websites, branding, and digital marketing that actually moves the needle. Est. 2025.</p><div class="footer-newsletter"><input type="email" placeholder="Your email address..."/><button class="newsletter-btn">Subscribe</button></div></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#web">Web Design</a></li><li><a href="services.html#brand">Brand Identity</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#seo">SEO &amp; Ads</a></li><li><a href="services.html#email">Email Marketing</a></li><li><a href="services.html#consult">Consulting</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="process.html">Our Process</a></li><li><a href="testimonials.html">Client Results</a></li><li><a href="calculator.html">ROI Calculator</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="calculator.html">Free ROI Calculator</a></li><li><a href="contact.html">Free Strategy Call</a></li><li><a href="pricing.html">Packages &amp; Pricing</a></li><li><span>Blog — Coming Soon</span></li><li><span>Case Studies — Coming Soon</span></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:michelle@mreneewilliams.com">michelle@mreneewilliams.com</a></li><li><a href="tel:+15551234567">(555) 123-4567</a></li><li><span>Mon–Fri, 9am–6pm EST</span></li><li><a href="contact.html">Send a Message</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Biz Boost Agency · All rights reserved.</div>
+    <div class="footer-social"><a href="#" class="social-icon">📸</a><a href="#" class="social-icon">👥</a><a href="#" class="social-icon">💼</a><a href="#" class="social-icon">🐦</a></div>
+    <div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="_shared.js"></script>
+</body></html>

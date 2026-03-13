@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="PAGE_DESC"/>
+<title>PAGE_TITLE — Biz Boost Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css"/>
+<style>PAGE_CSS</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="toast" id="toast"></div>
+
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">[ CLOSE ]</button>
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="services.html" onclick="closeMob()">Services</a>
+  <a href="pricing.html" onclick="closeMob()">Pricing</a>
+  <a href="calculator.html" onclick="closeMob()">Calculator</a>
+  <a href="process.html" onclick="closeMob()">Process</a>
+  <a href="testimonials.html" onclick="closeMob()">Clients</a>
+  <a href="contact.html" onclick="closeMob()" style="color:var(--neon)">Get Started</a>
+</div>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">Biz Boost Agency<span>Web · Brand · Growth</span></a>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="calculator.html">Calculator</a>
+    <a href="process.html">Process</a>
+    <a href="testimonials.html">Clients</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+    <a href="contact.html" class="nav-cta">Get Started</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>

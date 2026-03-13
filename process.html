@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Our proven 5-step process for delivering websites, brands, and marketing that get results."/>
+<title>Our Process — Biz Boost Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+.process-section{padding:80px 52px}
+.process-list{max-width:880px;margin:64px auto 0}
+.proc-item{display:grid;grid-template-columns:100px 1fr;gap:48px;align-items:start;padding:56px 0;border-bottom:1px solid var(--border);position:relative}
+.proc-item:last-child{border-bottom:none}
+.proc-item::before{content:'';position:absolute;left:48px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--neon),transparent);opacity:.15}
+.proc-num-wrap{text-align:center;position:relative}
+.proc-num{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;color:transparent;-webkit-text-stroke:1px var(--nc,var(--neon));opacity:.25;transition:opacity .35s;display:block}
+.proc-item:hover .proc-num{opacity:.7}
+.proc-emoji{font-size:28px;display:block;margin-top:8px}
+.proc-body h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,4vw,54px);color:var(--nc,var(--neon));line-height:.95;margin-bottom:18px}
+.proc-body p{font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:20px}
+.proc-bullets{list-style:none}
+.proc-bullets li{font-size:13.5px;color:var(--mid);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.proc-bullets li::before{content:'→';font-family:'DM Mono',monospace;font-size:10px;color:var(--nc,var(--neon));flex-shrink:0}
+.proc-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--nc,var(--neon));border:1px solid var(--nc,var(--neon));padding:4px 10px;border-radius:2px;margin-top:18px;opacity:.6}
+.timeline-bar{max-width:880px;margin:0 auto 64px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;text-align:center}
+.tl-step{padding:0 12px;position:relative}
+.tl-step::after{content:'';position:absolute;right:0;top:18px;width:1px;height:20px;background:var(--border)}
+.tl-step:last-child::after{display:none}
+.tl-day{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--neon);display:block;line-height:1}
+.tl-lbl{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-top:6px;display:block}
+@media(max-width:900px){.proc-item{grid-template-columns:1fr;gap:20px}.proc-item::before{display:none}.process-section{padding:60px 24px}.timeline-bar{grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}.tl-step{background:var(--card);padding:20px}.tl-step::after{display:none}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div><div class="toast" id="toast"></div>
+<div class="mob-menu" id="mobMenu"><button class="mob-close" id="mobClose">[ CLOSE ]</button><a href="index.html" onclick="closeMob()">Home</a><a href="services.html" onclick="closeMob()">Services</a><a href="pricing.html" onclick="closeMob()">Pricing</a><a href="calculator.html" onclick="closeMob()">Calculator</a><a href="process.html" onclick="closeMob()">Process</a><a href="testimonials.html" onclick="closeMob()">Clients</a><a href="contact.html" onclick="closeMob()" style="color:var(--neon)">Get Started</a></div>
+<nav id="mainNav"><a href="index.html" class="nav-logo">Biz Boost Agency<span>Web · Brand · Growth</span></a><div class="nav-links"><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="calculator.html">Calculator</a><a href="process.html">Process</a><a href="testimonials.html">Clients</a></div><div class="nav-right"><button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☀️</button><a href="contact.html" class="nav-cta">Get Started</a><button class="hamburger" id="hamburger"><span></span><span></span><span></span></button></div></nav>
+
+<div class="page-hero"><div class="hero-scan"></div><div class="sec-label center">How It Works</div><h1>Simple Process.<br><span style="color:var(--neon)">Real Results.</span></h1><p>A proven 5-step framework that keeps you informed, in control, and confident every step of the way.</p></div>
+
+<div class="process-section">
+  <div style="text-align:center;max-width:640px;margin:0 auto 48px"><div class="sec-label center">Typical Timeline</div><p style="color:var(--mid);font-size:15px;line-height:1.8">Most projects go from kickoff to launch in 7–14 days. Here's how the time breaks down:</p></div>
+  <div class="timeline-bar">
+    <div class="tl-step"><span class="tl-day">Day 1</span><span class="tl-lbl">Discovery Call</span></div>
+    <div class="tl-step"><span class="tl-day">Day 2–3</span><span class="tl-lbl">Strategy &amp; Plan</span></div>
+    <div class="tl-step"><span class="tl-day">Day 4–10</span><span class="tl-lbl">Build &amp; Create</span></div>
+    <div class="tl-step"><span class="tl-day">Day 11–13</span><span class="tl-lbl">Review &amp; Refine</span></div>
+    <div class="tl-step"><span class="tl-day">Day 14</span><span class="tl-lbl">Launch 🚀</span></div>
+  </div>
+
+  <div class="process-list">
+    <div class="proc-item reveal" style="--nc:var(--neon)">
+      <div class="proc-num-wrap"><span class="proc-num">01</span><span class="proc-emoji">🎯</span></div>
+      <div class="proc-body">
+        <h3>Discovery</h3>
+        <p>We start with a real conversation — no 40-question intake forms, no generic briefs. We want to understand your business, your customers, your goals, and what's been holding you back. This call typically runs 45–60 minutes and we come prepared with questions.</p>
+        <ul class="proc-bullets"><li>Deep-dive into your business, competitors, and market</li><li>Honest assessment of your current digital presence</li><li>Define clear goals, KPIs, and success metrics</li><li>Identify the highest-leverage opportunities first</li></ul>
+        <span class="proc-tag">Day 1</span>
+      </div>
+    </div>
+    <div class="proc-item reveal" style="--nc:var(--neon2)">
+      <div class="proc-num-wrap"><span class="proc-num" style="-webkit-text-stroke-color:var(--neon2)">02</span><span class="proc-emoji">📊</span></div>
+      <div class="proc-body">
+        <h3 style="color:var(--neon2)">Strategy</h3>
+        <p>Within 24–48 hours of your discovery call, we present a custom strategy document — specific to your business, your stage, and your budget. We walk you through every recommendation and the reasoning behind it. You approve everything before we execute a single thing.</p>
+        <ul class="proc-bullets" style="--nc:var(--neon2)"><li>Custom roadmap with prioritized action items</li><li>Budget recommendations with expected ROI</li><li>Timeline with clear milestones and deliverables</li><li>Your approval before any work begins</li></ul>
+        <span class="proc-tag" style="--nc:var(--neon2);color:var(--neon2);border-color:var(--neon2)">Days 2–3</span>
+      </div>
+    </div>
+    <div class="proc-item reveal" style="--nc:var(--neon3)">
+      <div class="proc-num-wrap"><span class="proc-num" style="-webkit-text-stroke-color:var(--neon3)">03</span><span class="proc-emoji">⚡</span></div>
+      <div class="proc-body">
+        <h3 style="color:var(--neon3)">Creation</h3>
+        <p>This is where we build. Our team executes with speed and precision — clean code, sharp design, and every pixel in its right place. You'll receive progress updates throughout so there are never any surprises. We work fast, but we never cut corners.</p>
+        <ul class="proc-bullets" style="--nc:var(--neon3)"><li>Daily updates on progress — you're never in the dark</li><li>Designs submitted for review before development begins</li><li>Brand voice and messaging woven through every element</li><li>Mobile-first, accessibility-conscious, SEO-ready</li></ul>
+        <span class="proc-tag" style="color:var(--neon3);border-color:var(--neon3)">Days 4–10</span>
+      </div>
+    </div>
+    <div class="proc-item reveal" style="--nc:var(--neon)">
+      <div class="proc-num-wrap"><span class="proc-num">04</span><span class="proc-emoji">🚀</span></div>
+      <div class="proc-body">
+        <h3>Launch</h3>
+        <p>We don't just hand you a zip file and disappear. We handle the full deployment — domain connection, performance optimization, cross-browser testing, and a complete walkthrough so you know exactly how everything works. Launch day should feel exciting, not stressful.</p>
+        <ul class="proc-bullets"><li>Full QA across browsers and devices</li><li>Performance optimization and speed checks</li><li>Analytics and tracking properly configured</li><li>Recorded training walkthrough — yours to keep</li></ul>
+        <span class="proc-tag">Days 11–14</span>
+      </div>
+    </div>
+    <div class="proc-item reveal" style="--nc:var(--neon2)">
+      <div class="proc-num-wrap"><span class="proc-num" style="-webkit-text-stroke-color:var(--neon2)">05</span><span class="proc-emoji">📈</span></div>
+      <div class="proc-body">
+        <h3 style="color:var(--neon2)">Optimize</h3>
+        <p>The work doesn't stop at launch. For monthly clients, we meet every month to review performance data, identify what's working, and refine what isn't. Results compound over time — and we're committed to being your long-term growth partner, not just a vendor.</p>
+        <ul class="proc-bullets" style="--nc:var(--neon2)"><li>Monthly performance reports with plain-English insights</li><li>A/B testing and conversion rate optimization</li><li>Content updates and SEO improvements</li><li>Strategy calls to adjust based on real data</li></ul>
+        <span class="proc-tag" style="color:var(--neon2);border-color:var(--neon2)">Ongoing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--card);border-top:1px solid var(--border);padding:80px 52px;text-align:center">
+  <div class="sec-label center" style="margin-bottom:20px">Ready to Start?</div>
+  <h2 class="sec-title" style="margin-bottom:20px">Step one is just<br><span style="color:var(--neon)">a conversation.</span></h2>
+  <p style="color:var(--mid);font-size:16px;line-height:1.8;max-width:480px;margin:0 auto 40px">Book your free discovery call and we'll walk you through exactly what we'd do for your business — no pitch, no pressure.</p>
+  <a href="contact.html" class="btn-primary">Book Discovery Call</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo-mark">Biz Boost Agency<span>Web · Brand · Growth</span></div><p>Building brands that dominate. Est. 2025.</p><div class="footer-newsletter"><input type="email" placeholder="Your email address..."/><button class="newsletter-btn">Subscribe</button></div></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#web">Web Design</a></li><li><a href="services.html#brand">Brand Identity</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#seo">SEO &amp; Ads</a></li><li><a href="services.html#email">Email Marketing</a></li><li><a href="services.html#consult">Consulting</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="process.html">Our Process</a></li><li><a href="testimonials.html">Client Results</a></li><li><a href="calculator.html">ROI Calculator</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="calculator.html">Free ROI Calculator</a></li><li><a href="contact.html">Free Strategy Call</a></li><li><a href="pricing.html">Packages &amp; Pricing</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:michelle@mreneewilliams.com">michelle@mreneewilliams.com</a></li><li><span>Mon–Fri, 9am–6pm EST</span></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 Biz Boost Agency · All rights reserved.</div><div class="footer-social"><a href="#" class="social-icon">📸</a><a href="#" class="social-icon">👥</a><a href="#" class="social-icon">💼</a><a href="#" class="social-icon">🐦</a></div><div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div>
+</footer>
+<script src="_shared.js"></script>
+</body></html>

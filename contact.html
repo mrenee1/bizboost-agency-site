@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Get in touch with Biz Boost Agency. Free strategy call, project inquiry, or just say hello."/>
+<title>Contact — Biz Boost Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+.contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;max-width:1100px;margin:0 auto;padding:100px 52px}
+.contact-info{}
+.contact-info h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,68px);line-height:.95;margin-bottom:24px}
+.contact-info p{font-size:15.5px;color:var(--mid);line-height:1.85;margin-bottom:36px}
+.info-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:6px;transition:border-color .25s}
+.info-item:hover{border-color:rgba(0,245,212,.25)}
+.info-icon{font-size:22px;flex-shrink:0;width:44px;height:44px;background:rgba(0,245,212,.08);border:1px solid rgba(0,245,212,.15);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.info-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:4px}
+.info-val{font-size:14.5px;color:var(--text)}
+.info-val a{color:var(--text);text-decoration:none;transition:color .2s}
+.info-val a:hover{color:var(--neon)}
+.availability{background:rgba(0,245,212,.06);border:1px solid rgba(0,245,212,.15);border-radius:6px;padding:16px 20px;margin-top:28px}
+.avail-dot{width:8px;height:8px;background:var(--neon);border-radius:50%;display:inline-block;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,245,212,.4)}70%{opacity:.8;box-shadow:0 0 0 8px rgba(0,245,212,0)}}
+.avail-text{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--neon);text-transform:uppercase}
+/* FORM */
+.form-wrap{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:48px;position:relative;overflow:hidden}
+.form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--neon),var(--neon2))}
+.form-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.04em;margin-bottom:6px}
+.form-sub{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:32px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-field{margin-bottom:0}
+.form-field.full{grid-column:1/-1}
+.form-field label{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+.form-field input,.form-field select,.form-field textarea{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:13px 16px;font-family:'Barlow',sans-serif;font-size:14.5px;border-radius:4px;outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical}
+.form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted)}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--neon);box-shadow:0 0 0 3px rgba(0,245,212,.08)}
+.form-field select option{background:var(--card)}
+.form-field textarea{min-height:130px}
+.form-submit{width:100%;padding:17px;background:var(--neon);color:#060810;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.12em;border:none;border-radius:4px;cursor:none;transition:all .25s;margin-top:8px;position:relative;overflow:hidden}
+.form-submit:hover{box-shadow:0 0 40px rgba(0,245,212,.5);transform:translateY(-2px)}
+.form-note{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--muted);text-align:center;margin-top:16px}
+/* Success state */
+.form-success{display:none;text-align:center;padding:40px 20px}
+.success-icon{font-size:52px;display:block;margin-bottom:20px}
+.success-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--neon);margin-bottom:10px}
+.success-sub{font-size:14.5px;color:var(--mid);line-height:1.8}
+/* FAQ */
+.faq-wrap{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);padding:24px 0}
+.faq-q{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;cursor:none;display:flex;justify-content:space-between;align-items:center;color:var(--text);transition:color .2s}
+.faq-q:hover{color:var(--neon)}
+.faq-a{font-size:14.5px;color:var(--mid);line-height:1.85;margin-top:14px;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q{color:var(--neon)}
+.faq-arrow{font-size:20px;transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+@media(max-width:900px){.contact-layout{grid-template-columns:1fr;padding:64px 24px;gap:40px}.form-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div><div class="toast" id="toast"></div>
+<div class="mob-menu" id="mobMenu"><button class="mob-close" id="mobClose">[ CLOSE ]</button><a href="index.html" onclick="closeMob()">Home</a><a href="services.html" onclick="closeMob()">Services</a><a href="pricing.html" onclick="closeMob()">Pricing</a><a href="calculator.html" onclick="closeMob()">Calculator</a><a href="process.html" onclick="closeMob()">Process</a><a href="testimonials.html" onclick="closeMob()">Clients</a><a href="contact.html" onclick="closeMob()" style="color:var(--neon)">Get Started</a></div>
+<nav id="mainNav"><a href="index.html" class="nav-logo">Biz Boost Agency<span>Web · Brand · Growth</span></a><div class="nav-links"><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="calculator.html">Calculator</a><a href="process.html">Process</a><a href="testimonials.html">Clients</a></div><div class="nav-right"><button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button><a href="contact.html" class="nav-cta">Get Started</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+
+<div class="page-hero">
+  <div class="hero-scan"></div>
+  <div class="sec-label center">Let's Talk</div>
+  <h1>Start the<br><span style="color:var(--neon)">conversation.</span></h1>
+  <p>No hard sell, no pressure. Just a real conversation about your business and how we can help it grow.</p>
+</div>
+
+<div class="contact-layout">
+  <div class="contact-info">
+    <div class="sec-label">Get In Touch</div>
+    <h2>We'd love to<br>hear from you.</h2>
+    <p>Whether you're ready to jump in or just exploring your options, we're here for it. Reach out and let's figure out the best path forward together.</p>
+
+    <div class="info-item reveal">
+      <div class="info-icon">📧</div>
+      <div><span class="info-label">Email Us</span><span class="info-val"><a href="mailto:michelle@mreneewilliams.com">michelle@mreneewilliams.com</a></span></div>
+    </div>
+    <div class="info-item reveal">
+      <div class="info-icon">📞</div>
+      <div><span class="info-label">Call or Text</span><span class="info-val"><a href="tel:+15551234567">(555) 123-4567</a></span></div>
+    </div>
+    <div class="info-item reveal">
+      <div class="info-icon">🕐</div>
+      <div><span class="info-label">Office Hours</span><span class="info-val">Monday – Friday, 9am – 6pm EST</span></div>
+    </div>
+    <div class="info-item reveal">
+      <div class="info-icon">⚡</div>
+      <div><span class="info-label">Response Time</span><span class="info-val">Within 24 hours — usually same day</span></div>
+    </div>
+
+    <div class="availability reveal">
+      <span class="avail-dot"></span>
+      <span class="avail-text">Currently accepting new clients</span>
+    </div>
+  </div>
+
+  <div class="form-wrap reveal">
+    <div id="formWrap">
+      <div class="form-title">Send a Message</div>
+      <div class="form-sub">We'll respond within 24 hours</div>
+      <!-- Formspree form — sends to michelle@mreneewilliams.com -->
+      <form action="https://formspree.io/f/xnnqojgk" method="POST" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_replyto" value="michelle@mreneewilliams.com"/>
+        <input type="hidden" name="_subject" value="New inquiry from Biz Boost Agency website"/>
+        <div class="form-grid">
+          <div class="form-field">
+            <label>Your Name *</label>
+            <input type="text" name="name" id="f-name" placeholder="Jane Smith" required/>
+          </div>
+          <div class="form-field">
+            <label>Email Address *</label>
+            <input type="email" name="email" id="f-email" placeholder="jane@company.com" required/>
+          </div>
+          <div class="form-field">
+            <label>Company / Business</label>
+            <input type="text" name="company" placeholder="Your Business Name"/>
+          </div>
+          <div class="form-field">
+            <label>Phone (optional)</label>
+            <input type="tel" name="phone" placeholder="(555) 000-0000"/>
+          </div>
+          <div class="form-field full">
+            <label>Service You're Interested In *</label>
+            <select name="service" required>
+              <option value="">— Select a service —</option>
+              <option>Web Design</option>
+              <option>Brand Identity</option>
+              <option>Social Media Management</option>
+              <option>SEO &amp; Ads</option>
+              <option>Email Marketing</option>
+              <option>Business Consulting</option>
+              <option>Full-Service Package</option>
+              <option>Not Sure Yet — Let's Talk</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label>Budget Range</label>
+            <select name="budget">
+              <option value="">— Select a range —</option>
+              <option>Under $500</option>
+              <option>$500 – $1,500</option>
+              <option>$1,500 – $3,000</option>
+              <option>$3,000 – $5,000</option>
+              <option>$5,000+</option>
+              <option>Ongoing Monthly Retainer</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label>Tell Us About Your Project *</label>
+            <textarea name="message" id="f-message" placeholder="What are you working on? What's your goal? Where are you stuck? The more detail, the better." required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Send My Message →</button>
+        <p class="form-note">By submitting, you agree to our <a href="privacy.html" style="color:var(--neon)">privacy policy</a>. No spam — ever.</p>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <span class="success-icon">✅</span>
+      <div class="success-title">Message Received!</div>
+      <p class="success-sub">Thanks for reaching out. We'll be in touch within 24 hours — usually same day. Check your inbox for a confirmation.</p>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--card);border-top:1px solid var(--border)">
+  <div style="text-align:center;max-width:640px;margin:0 auto 52px">
+    <div class="sec-label center">FAQ</div>
+    <h2 class="sec-title">Common<br>questions.</h2>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">How quickly can you start? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Most projects kick off within 3–5 business days of signing. We'll send a welcome packet, schedule your discovery call, and get to work fast. We respect your time and don't do month-long onboarding.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Do I need to have all the details figured out? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Not at all. Many of our best projects start with a "I know I need something but I'm not sure what." That's what the discovery call is for. We help you figure out the right approach for your goals and budget.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">What's included in the free strategy call? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">A 30-minute no-pressure conversation where we learn about your business, your goals, and your current challenges. You'll leave with at least 2–3 actionable insights regardless of whether you hire us.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Can I cancel a monthly plan? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Yes — monthly plans can be cancelled with 30 days' notice. No lock-in contracts, no cancellation fees. We earn your business every single month.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you work with businesses outside the US? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Absolutely. We work with clients across the US, Canada, UK, and beyond. Communication is primarily via email and video call, so location is never a barrier.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo-mark">Biz Boost Agency<span>Web · Brand · Growth</span></div><p>Building brands that dominate. Websites, branding, and digital marketing that actually moves the needle. Est. 2025.</p><div class="footer-newsletter"><input type="email" placeholder="Your email address..."/><button class="newsletter-btn">Subscribe</button></div></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#web">Web Design</a></li><li><a href="services.html#brand">Brand Identity</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#seo">SEO &amp; Ads</a></li><li><a href="services.html#email">Email Marketing</a></li><li><a href="services.html#consult">Consulting</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="process.html">Our Process</a></li><li><a href="testimonials.html">Client Results</a></li><li><a href="calculator.html">ROI Calculator</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="calculator.html">Free ROI Calculator</a></li><li><a href="contact.html">Free Strategy Call</a></li><li><a href="pricing.html">Packages &amp; Pricing</a></li><li><span>Blog — Coming Soon</span></li><li><span>Case Studies — Coming Soon</span></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:michelle@mreneewilliams.com">michelle@mreneewilliams.com</a></li><li><a href="tel:+15551234567">(555) 123-4567</a></li><li><span>Mon–Fri, 9am–6pm EST</span></li><li><a href="contact.html">Send a Message</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Biz Boost Agency · All rights reserved.</div>
+    <div class="footer-social"><a href="#" class="social-icon">📸</a><a href="#" class="social-icon">👥</a><a href="#" class="social-icon">💼</a><a href="#" class="social-icon">🐦</a></div>
+    <div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="_shared.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(r => {
+    if (r.ok) {
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      showToast('Message sent! We\'ll be in touch within 24 hours ✅');
+    } else {
+      showToast('Something went wrong. Please email us directly.');
+    }
+  }).catch(() => showToast('Network error. Please email us directly.'));
+}
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+</body></html>

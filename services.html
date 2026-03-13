@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Biz Boost Agency services — web design, brand identity, social media, SEO, email marketing, and consulting."/>
+<title>Services — Biz Boost Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+.svc-full{padding:80px 52px}
+.svc-block{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto 120px;padding-bottom:80px;border-bottom:1px solid var(--border)}
+.svc-block:last-child{border-bottom:none;margin-bottom:0}
+.svc-block.flip .svc-copy{order:2}.svc-block.flip .svc-visual{order:1}
+.svc-copy .sec-label{margin-bottom:12px}
+.svc-copy h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,68px);line-height:.95;margin-bottom:18px}
+.svc-copy p{font-size:15.5px;color:var(--mid);line-height:1.85;margin-bottom:28px}
+.svc-features{list-style:none;margin-bottom:32px}
+.svc-features li{font-size:14px;color:var(--mid);padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.svc-features li::before{content:'✓';font-family:'DM Mono',monospace;font-size:10px;color:var(--nc,var(--neon));flex-shrink:0;font-weight:700}
+.svc-price-tag{display:inline-block;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.08em;color:var(--nc,var(--neon));padding:10px 20px;border:1px solid var(--nc,var(--neon));border-radius:3px;margin-bottom:24px;background:rgba(0,245,212,.05)}
+.svc-visual{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:52px 40px;text-align:center;position:relative;overflow:hidden}
+.svc-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--nc,var(--neon)),transparent)}
+.svc-visual-icon{font-size:72px;display:block;margin-bottom:20px;filter:drop-shadow(0 0 20px rgba(0,245,212,.3))}
+.svc-visual-title{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--nc,var(--neon));margin-bottom:10px}
+.svc-visual-stat{font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--text);line-height:1;margin-bottom:6px}
+.svc-visual-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;padding:5px 12px;border:1px solid var(--nc,var(--neon));border-radius:2px;color:var(--nc,var(--neon));opacity:.6}
+@media(max-width:900px){.svc-block{grid-template-columns:1fr;gap:36px}.svc-block.flip .svc-copy,.svc-block.flip .svc-visual{order:unset}.svc-full{padding:60px 24px}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div><div class="toast" id="toast"></div>
+<div class="mob-menu" id="mobMenu"><button class="mob-close" id="mobClose">[ CLOSE ]</button><a href="index.html" onclick="closeMob()">Home</a><a href="services.html" onclick="closeMob()">Services</a><a href="pricing.html" onclick="closeMob()">Pricing</a><a href="calculator.html" onclick="closeMob()">Calculator</a><a href="process.html" onclick="closeMob()">Process</a><a href="testimonials.html" onclick="closeMob()">Clients</a><a href="contact.html" onclick="closeMob()" style="color:var(--neon)">Get Started</a></div>
+<nav id="mainNav"><a href="index.html" class="nav-logo">Biz Boost Agency<span>Web · Brand · Growth</span></a><div class="nav-links"><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="calculator.html">Calculator</a><a href="process.html">Process</a><a href="testimonials.html">Clients</a></div><div class="nav-right"><button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☀️</button><a href="contact.html" class="nav-cta">Get Started</a><button class="hamburger" id="hamburger"><span></span><span></span><span></span></button></div></nav>
+
+<div class="page-hero"><div class="hero-scan"></div><div class="sec-label center">What We Do</div><h1>Services That<br><span style="color:var(--neon)">Deliver.</span></h1><p>Everything you need to build, brand, and dominate your market — all under one roof. Pick one, stack them all.</p></div>
+
+<div class="svc-full">
+
+  <div class="svc-block" id="web">
+    <div class="svc-copy reveal">
+      <div class="sec-label" style="--neon:var(--neon)">01 / 06</div>
+      <h2 style="color:var(--neon)">Web Design<br>&amp; Development</h2>
+      <div class="tags"><span class="tag" style="--nc:var(--neon)">Landing Pages</span><span class="tag" style="--nc:var(--neon)">Full Sites</span><span class="tag" style="--nc:var(--neon)">eCommerce</span><span class="tag" style="--nc:var(--neon)">Client Portals</span></div>
+      <p>Your website is your hardest-working salesperson. We build custom, conversion-focused websites that load fast, look sharp on every device, and are engineered to turn visitors into paying customers.</p>
+      <p>No templates. No page builders. Every site is coded clean from scratch so it's fast, scalable, and actually yours.</p>
+      <ul class="svc-features" style="--nc:var(--neon)">
+        <li>Custom design tailored to your brand</li><li>Mobile-first, lightning-fast performance</li><li>SEO-ready structure from day one</li><li>Contact forms, booking, and integrations</li><li>Handed off with full training and documentation</li>
+      </ul>
+      <div class="svc-price-tag" style="--nc:var(--neon)">Starting at $997</div>
+      <br><a href="contact.html" class="btn-primary">Get a Quote</a>
+    </div>
+    <div class="svc-visual reveal" style="--nc:var(--neon)"><span class="svc-visual-icon">🖥️</span><div class="svc-visual-title">Avg Result</div><div class="svc-visual-stat">+180%</div><div class="svc-visual-lbl">Increase in qualified leads</div></div>
+  </div>
+
+  <div class="svc-block flip" id="brand">
+    <div class="svc-copy reveal">
+      <div class="sec-label">02 / 06</div>
+      <h2 style="color:var(--neon2)">Brand<br>Identity</h2>
+      <div class="tags"><span class="tag" style="--nc:var(--neon2)">Logo Design</span><span class="tag" style="--nc:var(--neon2)">Brand Kit</span><span class="tag" style="--nc:var(--neon2)">Style Guide</span><span class="tag" style="--nc:var(--neon2)">Color Systems</span></div>
+      <p>A strong brand isn't just a logo — it's the gut feeling people get when they encounter your business. We build complete visual identities that make you instantly recognizable and undeniably credible.</p>
+      <p>From your first logo concept to a full brand bible, we give you everything you need to show up consistently and confidently everywhere.</p>
+      <ul class="svc-features" style="--nc:var(--neon2)">
+        <li>Logo design (primary + alternate marks)</li><li>Color palette with HEX, RGB, and CMYK values</li><li>Typography system and font pairings</li><li>Brand voice and messaging guidelines</li><li>Business card and social media templates</li>
+      </ul>
+      <div class="svc-price-tag" style="--nc:var(--neon2)">Starting at $497</div>
+      <br><a href="contact.html" class="btn-primary" style="background:var(--neon2)">Get a Quote</a>
+    </div>
+    <div class="svc-visual reveal" style="--nc:var(--neon2)"><span class="svc-visual-icon">🎨</span><div class="svc-visual-title" style="color:var(--neon2)">Avg Result</div><div class="svc-visual-stat">+40%</div><div class="svc-visual-lbl">Increase in close rate</div></div>
+  </div>
+
+  <div class="svc-block" id="social">
+    <div class="svc-copy reveal">
+      <div class="sec-label">03 / 06</div>
+      <h2 style="color:var(--neon3)">Social Media<br>Management</h2>
+      <div class="tags"><span class="tag" style="--nc:var(--neon3)">Content Creation</span><span class="tag" style="--nc:var(--neon3)">Strategy</span><span class="tag" style="--nc:var(--neon3)">Scheduling</span><span class="tag" style="--nc:var(--neon3)">Analytics</span></div>
+      <p>Consistency is the secret to social media growth — and consistency is hard when you're running a business. We handle the content, the graphics, the captions, and the calendar so you never go dark.</p>
+      <p>We don't do generic. Every post is written in your brand voice and designed to your brand standards.</p>
+      <ul class="svc-features" style="--nc:var(--neon3)">
+        <li>Monthly content calendar and strategy</li><li>Custom graphic design for every post</li><li>Captions, hashtags, and scheduling</li><li>Instagram, Facebook, LinkedIn, TikTok</li><li>Monthly analytics report with insights</li>
+      </ul>
+      <div class="svc-price-tag" style="--nc:var(--neon3)">Starting at $299/mo</div>
+      <br><a href="contact.html" class="btn-primary" style="background:var(--neon3);color:#060810">Get a Quote</a>
+    </div>
+    <div class="svc-visual reveal" style="--nc:var(--neon3)"><span class="svc-visual-icon">📱</span><div class="svc-visual-title" style="color:var(--neon3)">Avg Result</div><div class="svc-visual-stat">3.2×</div><div class="svc-visual-lbl">Follower growth in 90 days</div></div>
+  </div>
+
+  <div class="svc-block flip" id="seo">
+    <div class="svc-copy reveal">
+      <div class="sec-label">04 / 06</div>
+      <h2 style="color:var(--neon)">SEO &amp;<br>Paid Ads</h2>
+      <div class="tags"><span class="tag" style="--nc:var(--neon)">Local SEO</span><span class="tag" style="--nc:var(--neon)">Google Ads</span><span class="tag" style="--nc:var(--neon)">Meta Ads</span><span class="tag" style="--nc:var(--neon)">Analytics</span></div>
+      <p>Getting found is half the battle. We run data-driven SEO and paid ad campaigns that bring the right buyers to your door — not just browsers. Every dollar of ad spend is tracked and optimized for ROI.</p>
+      <p>Whether you need local dominance or national reach, we build the strategy that matches your goals and budget.</p>
+      <ul class="svc-features" style="--nc:var(--neon)">
+        <li>On-page and technical SEO audit and fixes</li><li>Keyword research and content strategy</li><li>Google Business Profile optimization</li><li>Google Ads &amp; Meta Ads campaign management</li><li>Monthly performance report with ROI tracking</li>
+      </ul>
+      <div class="svc-price-tag" style="--nc:var(--neon)">Starting at $499/mo</div>
+      <br><a href="contact.html" class="btn-primary">Get a Quote</a>
+    </div>
+    <div class="svc-visual reveal" style="--nc:var(--neon)"><span class="svc-visual-icon">📈</span><div class="svc-visual-title">Avg Result</div><div class="svc-visual-stat">312%</div><div class="svc-visual-lbl">Average client ROI</div></div>
+  </div>
+
+  <div class="svc-block" id="email">
+    <div class="svc-copy reveal">
+      <div class="sec-label">05 / 06</div>
+      <h2 style="color:var(--neon2)">Email<br>Marketing</h2>
+      <div class="tags"><span class="tag" style="--nc:var(--neon2)">Automation</span><span class="tag" style="--nc:var(--neon2)">Sequences</span><span class="tag" style="--nc:var(--neon2)">Newsletters</span><span class="tag" style="--nc:var(--neon2)">Drip Campaigns</span></div>
+      <p>Email is still the highest-ROI marketing channel in existence. We design and automate email systems that nurture your leads, re-engage past customers, and generate revenue on autopilot.</p>
+      <p>From welcome sequences to abandoned cart flows to monthly newsletters — we handle the strategy and the execution.</p>
+      <ul class="svc-features" style="--nc:var(--neon2)">
+        <li>Welcome and onboarding sequences</li><li>Abandoned cart and re-engagement flows</li><li>Monthly newsletter design and copywriting</li><li>List segmentation and tagging strategy</li><li>A/B testing and open rate optimization</li>
+      </ul>
+      <div class="svc-price-tag" style="--nc:var(--neon2)">Starting at $249/mo</div>
+      <br><a href="contact.html" class="btn-primary" style="background:var(--neon2)">Get a Quote</a>
+    </div>
+    <div class="svc-visual reveal" style="--nc:var(--neon2)"><span class="svc-visual-icon">✉️</span><div class="svc-visual-title" style="color:var(--neon2)">Avg Result</div><div class="svc-visual-stat">42:1</div><div class="svc-visual-lbl">Industry avg email ROI</div></div>
+  </div>
+
+  <div class="svc-block flip" id="consult">
+    <div class="svc-copy reveal">
+      <div class="sec-label">06 / 06</div>
+      <h2 style="color:var(--neon3)">Business<br>Consulting</h2>
+      <div class="tags"><span class="tag" style="--nc:var(--neon3)">Strategy</span><span class="tag" style="--nc:var(--neon3)">Audit</span><span class="tag" style="--nc:var(--neon3)">Roadmap</span><span class="tag" style="--nc:var(--neon3)">1:1 Sessions</span></div>
+      <p>Stuck? Growing but not sure where to invest next? We offer hands-on consulting that diagnoses your business, identifies the leaks, and hands you a concrete roadmap to plug them — fast.</p>
+      <p>No 80-slide decks full of fluff. Just clear priorities, honest assessment, and actionable next steps you can execute immediately.</p>
+      <ul class="svc-features" style="--nc:var(--neon3)">
+        <li>Full digital marketing audit</li><li>Competitor and market analysis</li><li>90-day growth roadmap</li><li>1:1 strategy sessions (recorded)</li><li>Accountability check-ins and follow-up</li>
+      </ul>
+      <div class="svc-price-tag" style="--nc:var(--neon3)">Starting at $197/session</div>
+      <br><a href="contact.html" class="btn-primary" style="background:var(--neon3);color:#060810">Book a Session</a>
+    </div>
+    <div class="svc-visual reveal" style="--nc:var(--neon3)"><span class="svc-visual-icon">💡</span><div class="svc-visual-title" style="color:var(--neon3)">Avg Result</div><div class="svc-visual-stat">90d</div><div class="svc-visual-lbl">To see measurable impact</div></div>
+  </div>
+
+</div>
+
+<div style="background:var(--card);border-top:1px solid var(--border);padding:80px 52px;text-align:center">
+  <div class="sec-label center" style="margin-bottom:20px">Not Sure Where to Start?</div>
+  <h2 class="sec-title">Let's figure it<br><span style="color:var(--neon)">out together.</span></h2>
+  <p style="color:var(--mid);font-size:16px;line-height:1.8;max-width:480px;margin:20px auto 40px">Book a free 30-minute strategy call. We'll look at your business, ask the right questions, and tell you exactly what we'd do first.</p>
+  <a href="contact.html" class="btn-primary">Book Free Strategy Call</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo-mark">Biz Boost Agency<span>Web · Brand · Growth</span></div><p>Building brands that dominate. Websites, branding, and digital marketing that actually moves the needle. Est. 2025.</p><div class="footer-newsletter"><input type="email" placeholder="Your email address..."/><button class="newsletter-btn">Subscribe</button></div></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="#web">Web Design</a></li><li><a href="#brand">Brand Identity</a></li><li><a href="#social">Social Media</a></li><li><a href="#seo">SEO &amp; Ads</a></li><li><a href="#email">Email Marketing</a></li><li><a href="#consult">Consulting</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="process.html">Our Process</a></li><li><a href="testimonials.html">Client Results</a></li><li><a href="calculator.html">ROI Calculator</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="calculator.html">Free ROI Calculator</a></li><li><a href="contact.html">Free Strategy Call</a></li><li><a href="pricing.html">Packages &amp; Pricing</a></li><li><span>Blog — Coming Soon</span></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:michelle@mreneewilliams.com">michelle@mreneewilliams.com</a></li><li><a href="tel:+15551234567">(555) 123-4567</a></li><li><span>Mon–Fri, 9am–6pm EST</span></li><li><a href="contact.html">Send a Message</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 Biz Boost Agency · All rights reserved.</div><div class="footer-social"><a href="#" class="social-icon">📸</a><a href="#" class="social-icon">👥</a><a href="#" class="social-icon">💼</a><a href="#" class="social-icon">🐦</a></div><div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div>
+</footer>
+<script src="_shared.js"></script>
+</body></html>
