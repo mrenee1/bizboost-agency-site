@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0d1020"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </radialGradient>
+    <!-- Pink arrow gradient -->
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff3cac"/>
+      <stop offset="100%" stop-color="#ff6ecf"/>
+    </linearGradient>
+    <!-- Teal arrow gradient -->
+    <linearGradient id="tealGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="100%" stop-color="#00c9b0"/>
+    </linearGradient>
+    <!-- Gold arrow gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8a000"/>
+      <stop offset="100%" stop-color="#f5c518"/>
+    </linearGradient>
+    <!-- Glow filters -->
+    <filter id="glowPink" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowTeal" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowGold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Text gradients -->
+    <linearGradient id="bizGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3cac"/>
+      <stop offset="100%" stop-color="#ff6ecf"/>
+    </linearGradient>
+    <linearGradient id="boostGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="100%" stop-color="#00c9b0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)" rx="20"/>
+
+  <!-- Pink circular arrow (left, going up-left) -->
+  <g filter="url(#glowPink)">
+    <path d="M 155 80
+             A 85 85 0 1 0 90 195"
+          fill="none" stroke="url(#pinkGrad)" stroke-width="20" stroke-linecap="round"/>
+    <!-- Pink arrowhead at end of arc -->
+    <polygon points="90,195 68,170 112,165" fill="url(#pinkGrad)"/>
+  </g>
+
+  <!-- Teal circular arrow (right, going down-right) -->
+  <g filter="url(#glowTeal)">
+    <path d="M 245 320
+             A 85 85 0 1 0 310 205"
+          fill="none" stroke="url(#tealGrad)" stroke-width="20" stroke-linecap="round"/>
+    <!-- Teal arrowhead -->
+    <polygon points="310,205 332,230 288,235" fill="url(#tealGrad)"/>
+  </g>
+
+  <!-- Gold upward arrow (center) -->
+  <g filter="url(#glowGold)">
+    <!-- Arrow shaft -->
+    <line x1="200" y1="245" x2="200" y2="120" stroke="url(#goldGrad)" stroke-width="16" stroke-linecap="round"/>
+    <!-- Second gold arrow slightly offset -->
+    <line x1="218" y1="255" x2="218" y2="135" stroke="url(#goldGrad)" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
+    <!-- Arrowhead -->
+    <polygon points="200,95 178,130 222,130" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- BIZ text -->
+  <text x="86" y="350" font-family="'Bebas Neue', Arial Black, sans-serif" font-size="52" font-weight="900" letter-spacing="4" fill="url(#bizGrad)">BIZ</text>
+  <!-- BOOST text -->
+  <text x="156" y="350" font-family="'Bebas Neue', Arial Black, sans-serif" font-size="52" font-weight="900" letter-spacing="4" fill="url(#boostGrad)">BOOST</text>
+
+  <!-- AGENCY text with lines -->
+  <line x1="72" y1="367" x2="140" y2="367" stroke="#f5c518" stroke-width="1.5"/>
+  <text x="148" y="372" font-family="'DM Mono', 'Courier New', monospace" font-size="14" letter-spacing="8" fill="#f5c518" text-anchor="start">AGENCY</text>
+  <line x1="268" y1="367" x2="336" y2="367" stroke="#f5c518" stroke-width="1.5"/>
+</svg>
