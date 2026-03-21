@@ -1,0 +1,6 @@
+/**
+ * Next.js App Router global styles.
+ * Canonical design system: public/styles/bba-shared.css (also imported by public/_shared.css for legacy HTML).
+ * Do not duplicate rules here — edit bba-shared.css only.
+ */
+@import url("../public/styles/bba-shared.css");

@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
     requestAnimationFrame(animRing);
   })();
-  document.querySelectorAll('a,button,.svc-card,.pkg,.calc-tab,.marquee-item,.testi-card,.proc-step,.blog-card').forEach(el => {
+  document.querySelectorAll('a,button,.svc-card,.pkg,.calc-tab,.marquee-item,.testi-card,.proc-step,.blog-card,.team-card,.nav-cta,.theme-btn,.hamburger').forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('hovered'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('hovered'));
   });
@@ -49,13 +49,16 @@ window.addEventListener('DOMContentLoaded', () => {
   const ham = document.getElementById('hamburger');
   const mob = document.getElementById('mobMenu');
   const cls = document.getElementById('mobClose');
-  if (ham) ham.addEventListener('click', () => mob.classList.add('open'));
+  if (ham && mob) ham.addEventListener('click', () => mob.classList.add('open'));
   if (cls) cls.addEventListener('click', closeMob);
 
   // ── ACTIVE NAV ──
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const parts = window.location.pathname.split('/').filter(Boolean);
+  const path = parts.pop() || '';
   document.querySelectorAll('.nav-links a').forEach(a => {
-    if (a.getAttribute('href') === path) a.classList.add('active');
+    const href = a.getAttribute('href') || '';
+    if (href.startsWith('/') && href.includes('#')) return;
+    if (href === path) a.classList.add('active');
   });
 
   // ── REVEAL ──

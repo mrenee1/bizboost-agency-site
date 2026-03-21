@@ -1,0 +1,5 @@
+/**
+ * Legacy static HTML pages (public/*.html) load this file as /_shared.css.
+ * Delegates to the same canonical stylesheet as the Next app.
+ */
+@import url("/styles/bba-shared.css");
