@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function DeveloperPartnerSection() {
   return (
     <section id="developer-partner" className="dev-partner">
@@ -30,12 +32,12 @@ export function DeveloperPartnerSection() {
           brand — not disappear into a generic marketplace — we should talk.
         </p>
         <div className="dev-cta-row">
-          <a href="/contact.html" className="btn-primary">
+          <Link href="/contact" className="btn-primary">
             Apply as a partner
-          </a>
-          <a href="/process.html" className="btn-ghost">
+          </Link>
+          <Link href="/process" className="btn-ghost">
             See how we work
-          </a>
+          </Link>
         </div>
       </div>
     </section>

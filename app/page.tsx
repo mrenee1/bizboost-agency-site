@@ -3,7 +3,11 @@ import { SiteShell } from "@/components/SiteShell";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { DeveloperPartnerSection } from "@/components/sections/DeveloperPartnerSection";
 import { TeamSection } from "@/components/sections/TeamSection";
+import { homeMetadata } from "@/lib/metadata";
+import Link from "next/link";
 import type { CSSProperties } from "react";
+
+export const metadata = homeMetadata();
 
 export default function HomePage() {
   return (
@@ -27,12 +31,12 @@ export default function HomePage() {
             word, every campaign is built to convert.
           </p>
           <div className="hero-btns">
-            <a href="/services.html" className="btn-primary">
+            <Link href="/services" className="btn-primary">
               See Our Services
-            </a>
-            <a href="/calculator.html" className="btn-ghost">
+            </Link>
+            <Link href="/calculator" className="btn-ghost">
               ROI Calculator
-            </a>
+            </Link>
           </div>
           <div className="hero-stats">
             <div style={{ textAlign: "center" }}>
@@ -149,9 +153,9 @@ export default function HomePage() {
                 Custom websites built to convert. Fast, mobile-first, designed to
                 make your competition nervous.
               </div>
-              <a href="/services.html#web" className="svc-link">
+              <Link href="/services#web" className="svc-link">
                 Learn More →
-              </a>
+              </Link>
             </div>
             <div className="svc-card s-brand reveal">
               <div className="svc-icon">🎨</div>
@@ -160,9 +164,9 @@ export default function HomePage() {
                 Logos, color systems, and brand guidelines that make you instantly
                 recognizable and undeniably credible.
               </div>
-              <a href="/services.html#brand" className="svc-link">
+              <Link href="/services#brand" className="svc-link">
                 Learn More →
-              </a>
+              </Link>
             </div>
             <div className="svc-card s-social reveal">
               <div className="svc-icon">📱</div>
@@ -171,9 +175,9 @@ export default function HomePage() {
                 Content strategy and scheduling that builds community and keeps
                 your brand in the feed — every day.
               </div>
-              <a href="/services.html#social" className="svc-link">
+              <Link href="/services#social" className="svc-link">
                 Learn More →
-              </a>
+              </Link>
             </div>
             <div className="svc-card s-consult reveal">
               <div className="svc-icon">💡</div>
@@ -182,9 +186,9 @@ export default function HomePage() {
                 We diagnose your business, identify the leaks, and hand you a
                 concrete roadmap to plug them.
               </div>
-              <a href="/services.html#consult" className="svc-link">
+              <Link href="/services#consult" className="svc-link">
                 Learn More →
-              </a>
+              </Link>
             </div>
             <div className="svc-card s-seo reveal">
               <div className="svc-icon">📈</div>
@@ -193,9 +197,9 @@ export default function HomePage() {
                 Organic rankings and paid campaigns that bring buyers to your door
                 — not browsers. ROI-focused.
               </div>
-              <a href="/services.html#seo" className="svc-link">
+              <Link href="/services#seo" className="svc-link">
                 Learn More →
-              </a>
+              </Link>
             </div>
             <div className="svc-card s-email reveal">
               <div className="svc-icon">✉️</div>
@@ -204,15 +208,15 @@ export default function HomePage() {
                 Automated sequences and newsletters that turn one-time buyers into
                 loyal, repeat customers.
               </div>
-              <a href="/services.html#email" className="svc-link">
+              <Link href="/services#email" className="svc-link">
                 Learn More →
-              </a>
+              </Link>
             </div>
           </div>
           <div style={{ textAlign: "center", marginTop: 48 }}>
-            <a href="/services.html" className="btn-outline">
+            <Link href="/services" className="btn-outline">
               View All Services
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -348,9 +352,9 @@ export default function HomePage() {
             </div>
           </div>
           <div style={{ textAlign: "center", marginTop: 48 }}>
-            <a href="/testimonials.html" className="btn-outline">
+            <Link href="/testimonials" className="btn-outline">
               Read All Reviews
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -367,9 +371,9 @@ export default function HomePage() {
             No templates. No fluff. A partner who builds like it&apos;s their own
             business on the line.
           </p>
-          <a href="/contact.html" className="btn-primary">
+          <Link href="/contact" className="btn-primary">
             Start the Conversation
-          </a>
+          </Link>
         </div>
       </SiteShell>
     </>

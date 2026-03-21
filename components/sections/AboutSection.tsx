@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function AboutSection() {
   return (
@@ -42,9 +43,9 @@ export function AboutSection() {
             the right place.
           </p>
           <p className="reveal" style={{ marginBottom: 0 }}>
-            <a href="/contact.html" className="btn-primary">
+            <Link href="/contact" className="btn-primary">
               Book a strategy call
-            </a>
+            </Link>
           </p>
         </div>
       </div>
