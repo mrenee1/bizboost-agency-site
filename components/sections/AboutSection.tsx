@@ -3,7 +3,7 @@ import Image from "next/image";
 export function AboutSection() {
   return (
     <section id="about" className="about-founder">
-      <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 48px" }}>
+      <div className="section-intro section-intro--about">
         <div className="sec-label center">Founder</div>
         <h2 className="sec-title">
           Built from hustle,

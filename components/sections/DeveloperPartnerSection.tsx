@@ -3,7 +3,7 @@ export function DeveloperPartnerSection() {
     <section id="developer-partner" className="dev-partner">
       <div className="dev-inner">
         <div className="sec-label center">Developer partners</div>
-        <h2 className="sec-title" style={{ marginBottom: 20 }}>
+        <h2 className="sec-title dev-partner__title">
           Solo dev?
           <br />
           <span style={{ color: "var(--neon3)" }}>Let&apos;s scale under one brand.</span>

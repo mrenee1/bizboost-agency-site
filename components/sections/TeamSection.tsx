@@ -34,21 +34,14 @@ const TEAM = [
 export function TeamSection() {
   return (
     <section id="team" className="team-section">
-      <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto" }}>
+      <div className="section-intro section-intro--team">
         <div className="sec-label center">Squad</div>
         <h2 className="sec-title">
           The builders behind
           <br />
           <span style={{ color: "var(--neon2)" }}>the boost.</span>
         </h2>
-        <p
-          style={{
-            color: "var(--mid)",
-            lineHeight: 1.8,
-            fontSize: 15.5,
-            marginTop: 18,
-          }}
-        >
+        <p className="section-intro__lede">
           Demo profiles — swap in your real partners anytime. Same structure,
           your links.
         </p>
