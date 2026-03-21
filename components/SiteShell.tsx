@@ -138,9 +138,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
   const navClass = (href: string) => {
     if (href.startsWith("/#")) return "";
-    const target = href.replace(/^\//, "");
-    if (target === "index.html" || target === "") return pathname === "/" ? "active" : "";
-    return pathname === `/${target}` ? "active" : "";
+    const path = href.split("#")[0];
+    if (path === "/") return pathname === "/" ? "active" : "";
+    return pathname === path ? "active" : "";
   };
 
   return (
@@ -167,37 +167,37 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <Link href="/" onClick={() => setMobOpen(false)}>
           Home
         </Link>
-        <Link href="/#about" onClick={() => setMobOpen(false)}>
+        <Link href="/about" onClick={() => setMobOpen(false)}>
           About
         </Link>
-        <Link href="/#team" onClick={() => setMobOpen(false)}>
+        <Link href="/team" onClick={() => setMobOpen(false)}>
           Team
         </Link>
-        <Link href="/#developer-partner" onClick={() => setMobOpen(false)}>
+        <Link href="/developers" onClick={() => setMobOpen(false)}>
           For Developers
         </Link>
-        <a href="/services.html" onClick={() => setMobOpen(false)}>
+        <Link href="/services" onClick={() => setMobOpen(false)}>
           Services
-        </a>
-        <a href="/pricing.html" onClick={() => setMobOpen(false)}>
+        </Link>
+        <Link href="/pricing" onClick={() => setMobOpen(false)}>
           Pricing
-        </a>
-        <a href="/calculator.html" onClick={() => setMobOpen(false)}>
+        </Link>
+        <Link href="/calculator" onClick={() => setMobOpen(false)}>
           Calculator
-        </a>
-        <a href="/process.html" onClick={() => setMobOpen(false)}>
+        </Link>
+        <Link href="/process" onClick={() => setMobOpen(false)}>
           Process
-        </a>
-        <a href="/testimonials.html" onClick={() => setMobOpen(false)}>
+        </Link>
+        <Link href="/testimonials" onClick={() => setMobOpen(false)}>
           Clients
-        </a>
-        <a
-          href="/contact.html"
+        </Link>
+        <Link
+          href="/contact"
           onClick={() => setMobOpen(false)}
           style={{ color: "var(--neon)" }}
         >
           Get Started
-        </a>
+        </Link>
       </div>
 
       <nav id="mainNav">
@@ -216,30 +216,30 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </span>
         </Link>
         <div className="nav-links">
-          <Link href="/#about" className={navClass("/#about")}>
+          <Link href="/about" className={navClass("/about")}>
             About
           </Link>
-          <Link href="/#team" className={navClass("/#team")}>
+          <Link href="/team" className={navClass("/team")}>
             Team
           </Link>
-          <Link href="/#developer-partner" className={navClass("/#developer-partner")}>
+          <Link href="/developers" className={navClass("/developers")}>
             Partners
           </Link>
-          <a href="/services.html" className={navClass("services.html")}>
+          <Link href="/services" className={navClass("/services")}>
             Services
-          </a>
-          <a href="/pricing.html" className={navClass("pricing.html")}>
+          </Link>
+          <Link href="/pricing" className={navClass("/pricing")}>
             Pricing
-          </a>
-          <a href="/calculator.html" className={navClass("calculator.html")}>
+          </Link>
+          <Link href="/calculator" className={navClass("/calculator")}>
             Calculator
-          </a>
-          <a href="/process.html" className={navClass("process.html")}>
+          </Link>
+          <Link href="/process" className={navClass("/process")}>
             Process
-          </a>
-          <a href="/testimonials.html" className={navClass("testimonials.html")}>
+          </Link>
+          <Link href="/testimonials" className={navClass("/testimonials")}>
             Clients
-          </a>
+          </Link>
         </div>
         <div className="nav-right">
           <button
@@ -251,9 +251,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
           >
             {theme === "dark" ? "☀️" : "🌙"}
           </button>
-          <a href="/contact.html" className="nav-cta">
+          <Link href="/contact" className="nav-cta">
             Get Started
-          </a>
+          </Link>
           <button
             type="button"
             className="hamburger"
@@ -292,22 +292,22 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <h4>Services</h4>
             <ul>
               <li>
-                <a href="/services.html#web">Web Design</a>
+                <Link href="/services#web">Web Design</Link>
               </li>
               <li>
-                <a href="/services.html#brand">Brand Identity</a>
+                <Link href="/services#brand">Brand Identity</Link>
               </li>
               <li>
-                <a href="/services.html#social">Social Media</a>
+                <Link href="/services#social">Social Media</Link>
               </li>
               <li>
-                <a href="/services.html#seo">SEO &amp; Ads</a>
+                <Link href="/services#seo">SEO &amp; Ads</Link>
               </li>
               <li>
-                <a href="/services.html#email">Email Marketing</a>
+                <Link href="/services#email">Email Marketing</Link>
               </li>
               <li>
-                <a href="/services.html#consult">Consulting</a>
+                <Link href="/services#consult">Consulting</Link>
               </li>
             </ul>
           </div>
@@ -315,28 +315,28 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <h4>Company</h4>
             <ul>
               <li>
-                <Link href="/#about">Our Story</Link>
+                <Link href="/about">Our Story</Link>
               </li>
               <li>
-                <Link href="/#team">Team</Link>
+                <Link href="/team">Team</Link>
               </li>
               <li>
-                <Link href="/#developer-partner">Developer Partners</Link>
+                <Link href="/developers">Developer Partners</Link>
               </li>
               <li>
-                <a href="/process.html">Our Process</a>
+                <Link href="/process">Our Process</Link>
               </li>
               <li>
-                <a href="/testimonials.html">Client Results</a>
+                <Link href="/testimonials">Client Results</Link>
               </li>
               <li>
-                <a href="/calculator.html">ROI Calculator</a>
+                <Link href="/calculator">ROI Calculator</Link>
               </li>
               <li>
-                <a href="/pricing.html">Pricing</a>
+                <Link href="/pricing">Pricing</Link>
               </li>
               <li>
-                <a href="/contact.html">Contact Us</a>
+                <Link href="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -344,13 +344,13 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <h4>Resources</h4>
             <ul>
               <li>
-                <a href="/calculator.html">Free ROI Calculator</a>
+                <Link href="/calculator">Free ROI Calculator</Link>
               </li>
               <li>
-                <a href="/contact.html">Free Strategy Call</a>
+                <Link href="/contact">Free Strategy Call</Link>
               </li>
               <li>
-                <a href="/pricing.html">Packages &amp; Pricing</a>
+                <Link href="/pricing">Packages &amp; Pricing</Link>
               </li>
               <li>
                 <span>Blog — Coming Soon</span>
@@ -375,7 +375,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <span>Mon–Fri, 9am–6pm EST</span>
               </li>
               <li>
-                <a href="/contact.html">Send a Message</a>
+                <Link href="/contact">Send a Message</Link>
               </li>
             </ul>
           </div>
@@ -399,9 +399,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </a>
           </div>
           <div className="footer-legal">
-            <a href="/privacy.html">Privacy</a>
-            <a href="/terms.html">Terms</a>
-            <a href="/contact.html">Contact</a>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
       </footer>
